@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="main"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Create Consultation</title>
+</head>
+<body>
+    <div layout:fragment="main">
+        <div class="row">
+            <form method="post" class="text-dark" th:action="@{/admin/consultations/save}">
+                <div class="form-group">
+                    <label for="dateConsultation">Date de consultation</label>
+                    <input type="date" class="form-control" id="dateConsultation" name="dateConsultation" th:value="${consultation.dateConsultation}">
+                    <span class="text-danger" th:errors="${consultation.dateConsultation}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="rapport">Rapport</label>
+                    <textarea class="form-control" id="rapport" name="rapport" rows="3" cols="3"></textarea>
+                    <span class="text-danger" th:errors="${consultation.rapport}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="rendezvous">Rendez-vous</label>
+                    <input type="number" id="rendezvous" name="rendezvous" class="form-control" th:value="${consultation.rendezVous}">
+                    <span class="text-danger" th:errors="${consultation.rendezVous}"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

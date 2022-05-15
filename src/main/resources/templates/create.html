@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="main"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+    <div layout:fragment="main">
+        <div class="row">
+            <div class="col-md-4">
+                <form method="post" class="text-dark" th:action="@{/admin/save}">
+                    <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" class="form-control form-control-lg form-control-sm" placeholder="Nom" name="nom" th:value="${patient.nom}">
+                        <span class="text-danger" th:errors="${patient.nom}"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom" class="form-control form-control-lg form-control-sm" placeholder="Prénom" name="prenom" th:value="${patient.prenom}">
+                        <span class="text-danger" th:errors="${patient.prenom}"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateNaissance">Date de Naissance</label>
+                        <input type="date" id="dateNaissance" class="form-control form-control-lg form-control-sm" name="dateNaissance" th:value="${patient.dateNaissance}">
+                        <span class="text-danger" th:errors="${patient.dateNaissance}"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="malade">Malade</label>
+                        <input type="checkbox" id="malade" class="form-check" name="malade" th:value="${patient.malade}">
+                        <span class="text-danger" th:errors="${patient.malade}"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

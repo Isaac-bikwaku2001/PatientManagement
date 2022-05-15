@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="main"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Consultations</title>
+</head>
+<body>
+    <div layout:fragment="main">
+        <p>
+            <a class="nav-link active" th:href="@{/admin/consultations/create}">
+                Create New
+            </a>
+        </p>
+
+        <table class="table table-dark table-responsive-xl table-responsive-sm table-responsive-md table-responsive-lg">
+            <thead>
+                <tr>
+                    <th>Date de consultation</th>
+                    <th>Rapport</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="c:${Consultations}">
+                    <td th:text="${c.dateConsultation}"></td>
+                    <td th:text="${c.rapport}"></td>
+                    <td>
+                        <a onclick="return confirm('Voulez-vous supprimer cette consultation ?')" class="btn btn-danger" th:href="@{/admin/consultations/delete(id=${c.id})}">
+                            <i class="bi bi-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

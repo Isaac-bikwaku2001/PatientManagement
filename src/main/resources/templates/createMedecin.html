@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="main"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Create Medecin</title>
+</head>
+<body>
+    <div layout:fragment="main">
+        <div class="row">
+            <form method="post" class="text-dark" th:action="@{/admin/medecin/save}">
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" class="form-control form-control-lg form-control-sm" placeholder="Nom" name="nom" th:value="${medecin.nom}">
+                    <span class="text-danger" th:errors="${medecin.nom}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" class="form-control form-control-lg form-control-sm" placeholder="Prénom" name="prenom" th:value="${medecin.prenom}">
+                    <span class="text-danger" th:errors="${medecin.prenom}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control form-control-lg form-control-sm" placeholder="Email" name="email" th:value="${medecin.email}">
+                    <span class="text-danger" th:errors="${medecin.email}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="specialite">Specialité</label>
+                    <input type="text" id="specialite" class="form-control form-control-lg form-control-sm" placeholder="Specialité" name="specialite" th:value="${medecin.specialite}">
+                    <span class="text-danger" th:errors="${medecin.specialite}"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="webjars/bootstrap/4.0.0/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" th:href="@{/user/index}">
+                    GestPat
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" th:href="@{/user/index}">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" th:href="@{/user/medecin/index}">
+                                Medecins
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" th:href="@{/user/rendezvous/index}">
+                                Rendez-vous
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" th:href="@{/user/consultations/index}">
+                                Consultations
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            <section layout:fragment="main"></section>
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <p class="text-center text-lg-center text-md-center text-sm-center text-xl-center">
+                &copy; 2022 - Gestion de Patient
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
