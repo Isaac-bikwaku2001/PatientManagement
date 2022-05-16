@@ -64,4 +64,9 @@ public class PatientController {
         model.addAttribute("patient", patient);
         return "edit";
     }
+
+    @GetMapping("/")
+    public String home(){
+        return "home";
+    }
 }

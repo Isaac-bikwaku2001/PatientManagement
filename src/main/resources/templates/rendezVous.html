@@ -3,6 +3,7 @@
         lang="en"
         xmlns:th="http://www.thymeleaf.org"
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
         layout:decorate="main"
 >
 <head>
@@ -11,7 +12,7 @@
 </head>
 <body>
     <div layout:fragment="main">
-        <p>
+        <p sec:authorize="hasAuthority('ADMIN')">
             <a class="nav-link active" th:href="@{/admin/rendezvous/create}">
                 Create New
             </a>
@@ -33,7 +34,7 @@
                 <tr th:each="r:${ListRendezVous}">
                     <td th:text="${r.date}"></td>
                     <td th:text="${r.status}"></td>
-                    <td>
+                    <td sec:authorize="hasAuthority('ADMIN')">
                         <a onclick="return confirm('Voulez-vous supprimer ce rendez-vous ?')" class="btn btn-danger" th:href="@{/admin/rendezvous/delete(id=${r.getId()}, keyword=${keyword}, page=${currentPage})}">
                             <i class="bi bi-trash"></i>
                         </a>
