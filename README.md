@@ -23,3 +23,11 @@ Partie 2
 - Saisir et ajouter les patients
 - Faire la validation du formulaire
 - Editer et mettre à jour un patient
+
+Activité Pratique N°4: SPRING SECURITY
+--------------------------------------
+Sécuriser l'accès de l'aaplication qui permet de gérer les patients en utilisant Spring Security. l'accès à l'application
+nécessite une authentification avec un username et un mot de passe. un utilisateur peut avoir plusieurs roles.
+
+- ROLE_USER : permettant de chercher des patients
+- ROLE_ADMIN : permettant d'ajouter, mettre à jour et supprimer les patients.
